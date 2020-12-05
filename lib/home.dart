@@ -16,7 +16,7 @@ class home_screen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.cyan, // status bar color
             brightness: Brightness.light,
-            title: Text('Flutter App'),
+            title: Text('Dice Game'),
             bottom: TabBar(
               tabs: [
                 Tab(text: "Game"),
@@ -26,7 +26,56 @@ class home_screen extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Text('Game Page (Later will be change)'),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                  RaisedButton(
+                    onPressed: () {},
+                    textColor: Colors.white,
+                    padding: const EdgeInsets.all(0.0),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: <Color>[
+                            Color(0xFF0D47A1),
+                            Color(0xFF1976D2),
+                            Color(0xFF42A5F5),
+                          ],
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(10.0),
+                      child:
+                      const Text('Simple Level', style: TextStyle(fontSize: 20)),
+                    ),
+                  ),
+                  SizedBox(height: 5,),
+                  // SizedBox(height: 2,),
+                  RaisedButton(
+                    onPressed: () {},
+                    textColor: Colors.white,
+                    padding: const EdgeInsets.all(0.0),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: <Color>[
+                            Color(0xFF0D47A1),
+                            Color(0xFF1976D2),
+                            Color(0xFF42A5F5),
+                          ],
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(10.0),
+                      child:
+                      const Text('Hard Level', style: TextStyle(fontSize: 20)),
+                    ),
+                  ),
+                ],),
+              ),
+
+
+              // Text('Game Page (Later will be change)'),
               Text('Contact Page (Later will be change)'),
             ],
           ),

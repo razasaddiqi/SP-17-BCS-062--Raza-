@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-
+import 'home.dart';
 void main() {
   runApp(SplashScreen());
 }
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(seconds: 6),
             () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => DiceApp())));
+            context, MaterialPageRoute(builder: (context) => home_screen())));
   }
   @override
   Widget build(BuildContext context) {
@@ -51,21 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
             CircularProgressIndicator()
           ],
         )
-    );
-  }
-}
-
-class DiceApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
-            child: Text("Wait for another work")
-
-        ),
-      ),
     );
   }
 }
