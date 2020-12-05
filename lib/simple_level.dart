@@ -75,13 +75,13 @@ class _HomeScreenState extends State<HomeScreen>
          children: [
            Row(
              children: [
-               Text("Left Dice Score:"),
+               Text("Left Dice Score: "),
                Text("${count_left}"),
              ],
            ),
            Row(
              children: [
-               Text("Right Dice Score:"),
+               Text("Right Dice Score: "),
                Text("${count_right}"),
              ],
            ),
@@ -94,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
             onPressed: () {Navigator.of(context).pop();
             count_left=0;
             count_right=0;
+            winner='';
             },
           )
         ],
