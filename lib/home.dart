@@ -112,7 +112,6 @@ class home_screen extends StatelessWidget {
                                   Text("I am the student of computer science final semester.", style: TextStyle()),
                                   Text("Expertise:", style: TextStyle()),
                                   Row(
-
                                     children: [
                                     Text("Artificial Intelligence", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                                     SizedBox(width: 4,),

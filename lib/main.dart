@@ -47,6 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     'images/dice.jpg'),
                 height:300),
             Text("Raza Fayyaz Saddiqi",style:TextStyle(fontSize: 20)),
+            Text("SP17-BCs-062",style:TextStyle(fontSize: 20)),
+            SizedBox(height: 10,),
+            Image(
+                image: AssetImage(
+                    'images/my_pic.jpg'),
+                height:300),
             SizedBox(height: 10,),
             CircularProgressIndicator()
           ],
