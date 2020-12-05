@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'simple_level.dart';
 import 'hard_level.dart';
+import 'package:contactus/contactus.dart';
 void main() {
   runApp(home_screen());
 }
 
 class home_screen extends StatelessWidget {
+  static Widget circularImageWithBorder(String imgPath, double rad, double borderWidth, Color borderColor) {
+    return CircleAvatar(
+        radius: rad + borderWidth,
+        backgroundColor: borderColor,
+        child: CircleAvatar(
+          backgroundImage: AssetImage(imgPath),
+          radius: rad,
+        ));
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -83,7 +93,47 @@ class home_screen extends StatelessWidget {
                   ),
                 ],),
               ),
-              Text('Contact Page (Later will be change)'),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                    width: double.infinity,
+                    child: Card(
+                        color: Color(0xffeeeeee),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 40, bottom: 0, left: 10, right: 10),
+                              child: Column(
+                                children: <Widget>[
+                                  Text("Raza Fayyaz Saddiqi", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                  Text("I am the student of computer science final semester.", style: TextStyle()),
+                                  Text("Expertise:", style: TextStyle()),
+                                  Row(
+
+                                    children: [
+                                    Text("Artificial Intelligence", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                    SizedBox(width: 4,),
+                                    Text("Web Development", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                  ],),
+                                  Row(children: [
+                                    Text("Mobile app development", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                    SizedBox(width: 4,),
+                                    Text("Web Scrapping", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                  ],),
+                                ],
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
+                  circularImageWithBorder(
+                      "images/my_pic.jpg", 30, 2, Colors.black),
+                ],
+              ),
+              // Text('Contact Page (Later will be change)'),
             ],
           ),
         ),
