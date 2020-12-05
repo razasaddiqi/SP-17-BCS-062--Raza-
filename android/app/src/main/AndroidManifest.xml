@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sd17_bcs_062_raza">
    <application
-        android:label="sd17_bcs_062_raza"
+        android:label="Dice Game"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
