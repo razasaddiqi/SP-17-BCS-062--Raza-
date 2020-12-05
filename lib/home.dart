@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'simple_level.dart';
 void main() {
   runApp(home_screen());
 }
@@ -29,10 +29,14 @@ class home_screen extends StatelessWidget {
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-
                   children: [
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    },
                     textColor: Colors.white,
                     padding: const EdgeInsets.all(0.0),
                     child: Container(
@@ -73,9 +77,6 @@ class home_screen extends StatelessWidget {
                   ),
                 ],),
               ),
-
-
-              // Text('Game Page (Later will be change)'),
               Text('Contact Page (Later will be change)'),
             ],
           ),
