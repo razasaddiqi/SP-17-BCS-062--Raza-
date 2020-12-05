@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:after_layout/after_layout.dart';
 import 'dart:math';
-
+import 'dart:io';
 class hard_level extends StatefulWidget {
   @override
   _hardScreenState createState() => _hardScreenState();
@@ -21,6 +21,7 @@ class _hardScreenState extends State<hard_level>
   int correct_index=-1;
   int correct_ans=0;
   int wrong_ans=0;
+  bool can_show_button=false;
   List<Widget> _getList(int correct_num) {
     List list = List.generate(6, (i) => i+1);
     list.shuffle();
@@ -199,6 +200,19 @@ class _hardScreenState extends State<hard_level>
       appBar: AppBar(
         title: Text('Dice Game'),
         backgroundColor: Colors.green[400],
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {exit(0);},
+                child: Icon(
+                  Icons.close,
+                  size: 26.0,
+                ),
+              )
+          ),
+
+        ],
       ),
       body: Center(
         child: Column(
@@ -222,9 +236,6 @@ class _hardScreenState extends State<hard_level>
                     ),
                   ),
                 )
-
-
-
               ],
             ),
             RaisedButton(

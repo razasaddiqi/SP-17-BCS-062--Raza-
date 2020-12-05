@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:after_layout/after_layout.dart';
 import 'dart:math';
-
+import 'dart:io';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -107,6 +107,19 @@ class _HomeScreenState extends State<HomeScreen>
       appBar: AppBar(
         title: Text('Dice Game'),
         backgroundColor: Colors.green[400],
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {exit(0);},
+                child: Icon(
+                  Icons.close,
+                  size: 26.0,
+                ),
+              )
+          ),
+
+        ],
       ),
       body: Center(
         child: Column(
