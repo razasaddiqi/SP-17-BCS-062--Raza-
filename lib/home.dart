@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'simple_level.dart';
+import 'hard_level.dart';
 void main() {
   runApp(home_screen());
 }
@@ -57,7 +58,12 @@ class home_screen extends StatelessWidget {
                   SizedBox(height: 5,),
                   // SizedBox(height: 2,),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => hard_level()),
+                      );
+                    },
                     textColor: Colors.white,
                     padding: const EdgeInsets.all(0.0),
                     child: Container(
