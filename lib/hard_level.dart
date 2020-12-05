@@ -21,7 +21,7 @@ class _hardScreenState extends State<hard_level>
   int correct_index=-1;
   int correct_ans=0;
   int wrong_ans=0;
-  bool can_show_button=false;
+  bool can_show_button=true;
   List<Widget> _getList(int correct_num) {
     List list = List.generate(6, (i) => i+1);
     list.shuffle();
@@ -60,10 +60,8 @@ class _hardScreenState extends State<hard_level>
                     setState(() {
                       _value = value;
                       can_show_image=!can_show_image;
+                      can_show_button=!can_show_button;
                       que_count+=1;
-                      // selected_answers.add(value);
-                      // print()
-                      // count+=1;
                     });
                     if(que_count==5){
                       check_winner();
@@ -71,35 +69,14 @@ class _hardScreenState extends State<hard_level>
                   },
                 ),
               )
-
           )
-        // new Container(
-        //     padding: EdgeInsets.symmetric(horizontal: 25),
-        //     decoration: BoxDecoration(
-        //       // shape:  BoxShape.circle,
-        //       borderRadius: BorderRadius.circular(80.0),
-        //     ),
-        //     width: double.infinity,
-        //     height: 80,
-        //     child:FlatButton(
-        //       color: Color(0xFF00E676),
-        //       textColor: Colors.white,
-        //       child: new Text(options[q-1],style: TextStyle(fontSize: 25),),
-        //       onPressed: () {
-        //         checkAnswer(q,context);
-        //       },
-        //     )
-        // )
+
 
       );
     }
     return temp;
   }
-  void hideWidget() {
-    setState(() {
-      can_show_image = !can_show_image;
-    });
-  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -131,6 +108,7 @@ class _hardScreenState extends State<hard_level>
         setState(() {
 
           can_show_image = !can_show_image;
+          can_show_button=!can_show_button;
           leftDice = Random().nextInt(6) + 1;
           print(leftDice);
           count_left+=leftDice;
@@ -183,10 +161,10 @@ class _hardScreenState extends State<hard_level>
             onPressed: () {Navigator.of(context).pop();
             wrong_ans=0;
             correct_ans=0;
-            que_count=0;
-            // setState(() {
-            //   can_show_image=!can_show_image;
-            // });
+            setState(() {
+              que_count=0;
+            });
+
             },
           )
         ],
@@ -238,6 +216,7 @@ class _hardScreenState extends State<hard_level>
                 )
               ],
             ),
+            can_show_button?
             RaisedButton(
               onPressed: roll,
               child: Text(
@@ -247,7 +226,7 @@ class _hardScreenState extends State<hard_level>
               color: Colors.lightGreen[300],
               splashColor: Colors.yellowAccent,
 
-            ),
+            ):Text("Take a guess",style: TextStyle(fontSize: 30),),
 
           ],
         ),
